@@ -6,16 +6,16 @@
     
     <title>arzon.furushtjk | Гаджетҳои арзон дар Тоҷикистон</title>
     <meta name="description" content="Мағозаи гаджетҳои навтарин ва аксессуарҳои аслӣ бо нархи беҳтарин дар Тоҷикистон. iPhone, Samsung ва таҷҳизоти автомобилӣ.">
-    <meta name="keywords" content="arzon furush, Тоҷикистон, Душанбе, харид, телефон, гаджет, арзон фуруш тч, аксессуарҳо">
-    <meta name="author" content="arzon.furushtjk">
+    <meta name="keywords" content="arzon furush, Тоҷикистон, Душанбе, харид, телефон, гаджет, аксессуарҳо, Алиф, Душанбе Сити">
     
     <meta property="og:title" content="arzon.furushtjk | Premium Gadgets">
-    <meta property="og:description" content="Гаджетҳои навтарин бо нархи беҳтарин дар Тоҷикистон. Пардохт тавассути Душанбе Сити, Алиф ва Эсхата.">
-    <meta property="og:image" content="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800">
+    <meta property="og:description" content="Нархҳои беҳтарин дар Тоҷикистон. Пардохт тавассути DC, Alif ва Эсхата.">
+    <meta property="og:url" content="https://parisamerica92-dev.github.io/arzon.furushtjk/">
     <meta property="og:type" content="website">
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
+    
     <style>
         :root {
             --accent: #00f2ff;
@@ -112,16 +112,16 @@
         .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
         .wa { background: var(--wa); }
         .tg { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
-        .pay-trigger { background: transparent; border: 1px dashed rgba(255,255,255,0.2); cursor: pointer; }
+        .pay-trigger { background: transparent; border: 1px dashed rgba(255,255,255,0.2); cursor: pointer; margin-top: 5px; }
 
         .payment-info {
             display: none;
             margin-top: 20px;
             padding: 20px;
-            background: rgba(0,0,0,0.4);
+            background: rgba(0,0,0,0.6);
             border-radius: 25px;
             text-align: left;
-            border: 1px solid rgba(255,255,255,0.05);
+            border: 1px solid rgba(255,255,255,0.1);
             animation: slideUp 0.3s ease-out;
         }
 
@@ -130,19 +130,16 @@
         .card-number {
             display: block;
             background: #111;
-            padding: 12px;
-            border-radius: 12px;
+            padding: 15px;
+            border-radius: 15px;
             color: var(--accent);
             font-family: monospace;
-            font-size: 17px;
+            font-size: 18px;
             margin: 10px 0;
             text-align: center;
-            border: 1px solid #222;
+            border: 1px solid #333;
             cursor: pointer;
-            transition: 0.3s;
         }
-
-        .card-number:active { transform: scale(0.95); background: #222; }
 
         .bank-grid {
             display: grid;
@@ -156,52 +153,60 @@
             border-radius: 12px;
             text-decoration: none;
             color: white;
-            font-size: 13px;
-            font-weight: 600;
+            font-size: 12px;
+            font-weight: 700;
             text-align: center;
-            transition: 0.3s;
+            transition: 0.2s;
+            display: block;
         }
 
         .dc { background: #ed1c24; }
         .alif { background: #00d084; }
         .eskhata { background: #0055a4; }
         .amonat { background: #339933; }
+        .bank-btn:active { transform: scale(0.95); }
 
         .active { display: block; }
-        footer { margin-top: 30px; font-size: 11px; color: #444; letter-spacing: 1px; text-align: center; }
+        footer { margin-top: 30px; font-size: 10px; color: #555; letter-spacing: 2px; text-align: center; }
     </style>
 </head>
 <body>
 
 <div class="shop-card">
     <div class="image-container">
-        <span class="badge">New Collection 2024</span>
-        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800&auto=format&fit=crop" alt="Smartphones">
+        <span class="badge">Collection 2026</span>
+        <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=800" alt="Smartphones">
     </div>
 
     <h1>arzon.furushtjk</h1>
     <p style="color: #888; font-size: 14px; margin-bottom: 25px;">Гаджетҳои навтарин бо нархи беҳтарин дар Тоҷикистон.</p>
 
     <div class="buttons">
-        <a href="https://wa.me/992101550727" class="btn wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
-        <a href="https://t.me/arzonfurushtjk" class="btn tg"><i class="fab fa-telegram-plane"></i> Telegram Channel</a>
-        <div class="btn pay-trigger" onclick="showPay()"><i class="fas fa-wallet"></i> Реквизитҳо ва Пардохт</div>
+        <a href="https://wa.me/992101550727" class="btn wa" target="_blank">
+            <i class="fab fa-whatsapp"></i> WhatsApp
+        </a>
+        <a href="https://t.me/arzonfurushtjk" class="btn tg" target="_blank">
+            <i class="fab fa-telegram-plane"></i> Telegram Channel
+        </a>
+        <div class="btn pay-trigger" onclick="showPay()">
+            <i class="fas fa-wallet"></i> Реквизитҳо ва Пардохт
+        </div>
     </div>
 
     <div id="payBox" class="payment-info">
-        <span style="font-size: 11px; color: #666; text-transform: uppercase;">Барои нусхабардорӣ пахш кунед:</span>
-        <span class="card-number" id="card" onclick="copyCard()">9762 0002 0413 4869</span>
-        <span style="font-size: 14px; font-weight: 600; display: block; margin-bottom: 15px;">👤 Мухаммадчони Х.А</span>
+        <span style="font-size: 10px; color: #888; text-transform: uppercase;">Барои нусхабардорӣ пахш кунед:</span>
+        <div class="card-number" id="card" onclick="copyCard()">9762 0002 0413 4869</div>
+        <span style="font-size: 14px; font-weight: 600; display: block; margin-bottom: 15px; text-align: center;">👤 Мухаммадчони Х.А</span>
         
-        <span style="font-size: 11px; color: #666; text-transform: uppercase;">Интихоби бонк барои пардохт:</span>
+        <span style="font-size: 10px; color: #888; text-transform: uppercase;">Интихоби бонк:</span>
         <div class="bank-grid">
-            <a href="dushanbecity://" class="bank-btn dc">D. City</a>
+            <a href="dushanbecity://" class="bank-btn dc">DC City</a>
             <a href="alifmobi://" class="bank-btn alif">Alif Mobi</a>
             <a href="eskhata://" class="bank-btn eskhata">Эсхата</a>
             <a href="amonatmobile://" class="bank-btn amonat">Амонат</a>
         </div>
 
-        <a href="https://t.me/arzonfurushtjk_bot" style="color: var(--accent); text-decoration: none; font-size: 12px; font-weight: bold; display: block; text-align: center; border: 1px solid rgba(0,242,255,0.2); padding: 10px; border-radius: 10px;">
+        <a href="https://t.me/arzonfurushtjk_bot" target="_blank" style="color: var(--accent); text-decoration: none; font-size: 12px; font-weight: bold; display: block; text-align: center; border: 1px solid rgba(0,242,255,0.3); padding: 12px; border-radius: 15px;">
             <i class="fas fa-check-circle"></i> Фиристодани чек ба Бот
         </a>
     </div>
@@ -227,6 +232,8 @@
                 cardDisplay.innerText = originalText;
                 cardDisplay.style.color = "var(--accent)";
             }, 2000);
+        }).catch(err => {
+            console.error('Ошибка копирования', err);
         });
     }
 </script>
