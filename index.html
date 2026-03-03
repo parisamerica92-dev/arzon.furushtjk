@@ -78,13 +78,6 @@
             -webkit-text-fill-color: transparent;
         }
 
-        p.desc {
-            color: #888;
-            font-size: 14px;
-            line-height: 1.6;
-            margin-bottom: 30px;
-        }
-
         .buttons {
             display: flex;
             flex-direction: column;
@@ -106,20 +99,10 @@
             border: 1px solid transparent;
         }
 
-        .btn:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 20px rgba(0,0,0,0.3);
-        }
-
-        .wa { background: var(--wa); color: #fff; }
+        .btn:hover { transform: translateY(-5px); box-shadow: 0 10px 20px rgba(0,0,0,0.3); }
+        .wa { background: var(--wa); }
         .tg { background: rgba(255,255,255,0.05); border-color: rgba(255,255,255,0.1); }
-        .tg:hover { background: var(--tg); border-color: var(--tg); }
-
-        .pay-trigger {
-            background: transparent;
-            border: 1px dashed rgba(255,255,255,0.2);
-            cursor: pointer;
-        }
+        .pay-trigger { background: transparent; border: 1px dashed rgba(255,255,255,0.2); cursor: pointer; }
 
         .payment-info {
             display: none;
@@ -132,10 +115,7 @@
             animation: slideUp 0.3s ease-out;
         }
 
-        @keyframes slideUp {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
+        @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
 
         .card-number {
             display: block;
@@ -148,16 +128,38 @@
             margin: 10px 0;
             text-align: center;
             border: 1px solid #222;
+            cursor: pointer;
+            transition: 0.3s;
         }
+
+        .card-number:active { transform: scale(0.95); background: #222; }
+
+        /* Сетка банков */
+        .bank-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 10px;
+            margin: 15px 0;
+        }
+
+        .bank-btn {
+            padding: 12px;
+            border-radius: 12px;
+            text-decoration: none;
+            color: white;
+            font-size: 13px;
+            font-weight: 600;
+            text-align: center;
+            transition: 0.3s;
+        }
+
+        .dc { background: #ed1c24; }
+        .alif { background: #00d084; }
+        .eskhata { background: #0055a4; }
+        .amonat { background: #339933; }
 
         .active { display: block; }
-
-        footer {
-            margin-top: 30px;
-            font-size: 11px;
-            color: #444;
-            letter-spacing: 1px;
-        }
+        footer { margin-top: 30px; font-size: 11px; color: #444; letter-spacing: 1px; text-align: center; }
     </style>
 </head>
 <body>
@@ -169,29 +171,29 @@
     </div>
 
     <h1>arzon.furushtjk</h1>
-    <p class="desc">Гаджетҳои навтарин ва аксессуарҳои аслӣ бо кафолат ва нархи беҳтарин дар Тоҷикистон.</p>
+    <p style="color: #888; font-size: 14px; margin-bottom: 25px;">Гаджетҳои навтарин бо нархи беҳтарин дар Тоҷикистон.</p>
 
     <div class="buttons">
-        <a href="https://wa.me/992101550727?text=Салом!+Ман+мехоҳам+фармоиш+диҳам." class="btn wa">
-            <i class="fab fa-whatsapp"></i> Навиштан дар WhatsApp
-        </a>
-
-        <a href="https://t.me/arzonfurushtjk" class="btn tg">
-            <i class="fab fa-telegram-plane"></i> Канали Telegram
-        </a>
-
-        <div class="btn pay-trigger" onclick="showPay()">
-            <i class="fas fa-wallet"></i> Реквизитҳо барои пардохт
-        </div>
+        <a href="https://wa.me/992101550727" class="btn wa"><i class="fab fa-whatsapp"></i> WhatsApp</a>
+        <a href="https://t.me/arzonfurushtjk" class="btn tg"><i class="fab fa-telegram-plane"></i> Telegram Channel</a>
+        <div class="btn pay-trigger" onclick="showPay()"><i class="fas fa-wallet"></i> Реквизитҳо ва Пардохт</div>
     </div>
 
     <div id="payBox" class="payment-info">
-        <span style="font-size: 12px; color: #666;">Корти Душанбе Сити:</span>
-        <span class="card-number">9762 0002 0413 4869</span>
-        <span style="font-size: 14px; font-weight: 600;">👤 Мухаммадчони Х.А</span>
-        <p style="font-size: 12px; color: #888; margin-top: 15px;">Пас аз гузаронидани маблағ чеки худро ба бот фиристед:</p>
-        <a href="https://t.me/arzonfurushtjk_bot" style="color: var(--accent); text-decoration: none; font-size: 13px; font-weight: bold;">
-            <i class="fas fa-check-circle"></i> Тасдиқи пардохт
+        <span style="font-size: 11px; color: #666; text-transform: uppercase;">Барои нусхабардорӣ пахш кунед:</span>
+        <span class="card-number" id="card" onclick="copyCard()">9762 0002 0413 4869</span>
+        <span style="font-size: 14px; font-weight: 600; display: block; margin-bottom: 15px;">👤 Мухаммадчони Х.А</span>
+        
+        <span style="font-size: 11px; color: #666; text-transform: uppercase;">Интихоби бонк барои пардохт:</span>
+        <div class="bank-grid">
+            <a href="dushanbecity://" class="bank-btn dc">D. City</a>
+            <a href="alifmobi://" class="bank-btn alif">Alif Mobi</a>
+            <a href="eskhata://" class="bank-btn eskhata">Эсхата</a>
+            <a href="amonatmobile://" class="bank-btn amonat">Амонат</a>
+        </div>
+
+        <a href="https://t.me/arzonfurushtjk_bot" style="color: var(--accent); text-decoration: none; font-size: 12px; font-weight: bold; display: block; text-align: center; border: 1px solid rgba(0,242,255,0.2); padding: 10px; border-radius: 10px;">
+            <i class="fas fa-check-circle"></i> Фиристодани чек ба Бот
         </a>
     </div>
 
@@ -201,6 +203,22 @@
 <script>
     function showPay() {
         document.getElementById('payBox').classList.toggle('active');
+    }
+
+    function copyCard() {
+        const cardNumber = "9762000204134869";
+        const cardDisplay = document.getElementById('card');
+        
+        navigator.clipboard.writeText(cardNumber).then(() => {
+            const originalText = cardDisplay.innerText;
+            cardDisplay.innerText = "Нусхабардорӣ шуд! ✅";
+            cardDisplay.style.color = "#25D366";
+            
+            setTimeout(() => {
+                cardDisplay.innerText = originalText;
+                cardDisplay.style.color = "var(--accent)";
+            }, 2000);
+        });
     }
 </script>
 
